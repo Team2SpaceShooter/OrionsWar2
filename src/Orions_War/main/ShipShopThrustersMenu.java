@@ -3,20 +3,17 @@ package Orions_War.main;
 import java.awt.Color; 
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
 
-import javax.swing.ImageIcon;
+
 import javax.swing.JPanel;
-
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 @SuppressWarnings("serial")
-public class ShipShopMenu extends JPanel 
+public class ShipShopThrustersMenu extends JPanel
 {
-	private static Color backgroundColor = Color.black;
-	private static Color textColor = Color.white;
-	
-	
-	
+
+
 	private static Dimension windowSize = new Dimension(1000,800);
 	
 	//TODO: make the selectionOval its own class
@@ -27,42 +24,39 @@ public class ShipShopMenu extends JPanel
 	private Image img;
 	private Player_Ship ship = new Player_Ship(453.0,365.0,10.0,10.0) ;
 	
-	public ShipShopMenu()
+	
+	public ShipShopThrustersMenu()
 	{
-		System.out.println("Ship Shop menu created");
+		System.out.println("Ship Shop Thrusters menu created");
 		
-		this.setBackground(backgroundColor);
-        ImageIcon icon = new ImageIcon("images/Ship_Shop/Ship_ShopMenu_Main.png");
+		
+        ImageIcon icon = new ImageIcon("images/Ship_Shop/Ship_ShopMenu_Thruster.png");
 		
 		img = icon.getImage();
-		this.setSize(windowSize);
+		/*this.setSize(windowSize);
 		this.setOpaque(true);
 		this.setVisible(true);
 		this.setFocusable(true);
-		this.addKeyListener(new ShipShopMenuKeyAdapter(this));
+		*/
+		this.addKeyListener(new ShipShopThrustersKeyAdapter(this));
 		
 		//added so that manual position of JComponents would be feasible
-		this.setLayout(null);
+		//this.setLayout(null);
 
 	}
-	
 	public void paintComponent(Graphics g)
     {
+
+		// the following two lines are needed because calling the paint overrides the background color
+		g.drawRect(0, 0, 1000, 800);
 		
-		//the following two lines are needed because calling the paint overrides the background color
-		g.setColor(backgroundColor);
-		g.fillRect(0, 0, this.getWidth(), this.getHeight());
-		g.drawImage(img, 0, 0, 1000,800, this);
-		g.setColor(textColor);
-		
+		g.drawImage(img, 0, 0,1000,800, this);
+		g.setColor(Color.white);
 		g.drawOval(selectionOvalX, selectionOvalY, selectionOvalHeight, selectionOvalWidth);
-	
-	
-		
 		drawShip(g, ship);
-
+        
     }
-
+	
 	private void drawShip(Graphics g, Player_Ship s)
 	{	
 		// Figure out where the ship should be drawn
@@ -73,7 +67,7 @@ public class ShipShopMenu extends JPanel
 		// Draw the ship body
 		g.drawOval(xCenter - radius, yCenter - radius, radius*2, radius*2);
 		
-	}	
+	}
 
 	public void moveSelectionOvalUp()
 	{

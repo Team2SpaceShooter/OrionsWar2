@@ -33,6 +33,10 @@ public class Main
     public static ShipShopMenu ShipShopMenu;
     public static LoadGameMenu loadGameMenu;
     public static ShipShopEnginesMenu ShipShopEnginesMenu;
+    public static ShipShopThrustersMenu ShipShopThrustersMenu;
+    public static ShipShopWeaponsMenu ShipShopWeaponsMenu;
+    public static ShipShopHullsMenu ShipShopHullsMenu;
+    public static HowToPlayScreen HowToPlayScreen;
     
     private static void createAndShowGUI() 
     {
@@ -51,6 +55,10 @@ public class Main
     	ShipShopMenu = new ShipShopMenu();
     	loadGameMenu = new LoadGameMenu();
     	ShipShopEnginesMenu = new ShipShopEnginesMenu();
+    	ShipShopThrustersMenu = new ShipShopThrustersMenu();
+    	ShipShopWeaponsMenu = new ShipShopWeaponsMenu();
+    	ShipShopHullsMenu = new ShipShopHullsMenu();
+    	HowToPlayScreen = new HowToPlayScreen();
     	//TODO: this should only get called when the highscore menu is called specifically remembering to close file and whatnot
     	//((HighScoreMenu) highScoreMenu).loadScores();
     	

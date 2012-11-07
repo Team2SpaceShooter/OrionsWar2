@@ -37,7 +37,7 @@ public class MenuEventHandler
 			Main.newGameMenu.setVisible(true);
 			Main.newGameMenu.setEnabled(true);
 			Main.newGameMenu.requestFocusInWindow();
-			Main.newGameMenu.moveSelectionOvalUp();
+			
 			/*
 			//NOTE: these must be called here. Calling them in the constructor causes undesirable behavior relating to the focus system
 			Main.levelSelectorMenu.setFocusable(true);
@@ -63,7 +63,7 @@ public class MenuEventHandler
 			Main.loadGameMenu.setVisible(true);
 			Main.loadGameMenu.setEnabled(true);
 			Main.loadGameMenu.requestFocusInWindow();
-			Main.loadGameMenu.moveSelectionOvalUp();
+		
 		}
 		
 		else if(eventId == 3)
@@ -83,7 +83,6 @@ public class MenuEventHandler
 			Main.highScoreMenu.requestFocusInWindow();
 			
 			Main.highScoreMenu.loadScores();
-			Main.highScoreMenu.moveSelectionOvalDown();
 			
 		}
 		else if(eventId == 4)
@@ -99,7 +98,7 @@ public class MenuEventHandler
 			Main.ShipShopMenu.setVisible(true);
 			Main.ShipShopMenu.setEnabled(true);
 			Main.ShipShopMenu.requestFocusInWindow();
-			Main.ShipShopMenu.moveSelectionOvalDown();
+		
 		}
 		else if(eventId == 5)
 		{

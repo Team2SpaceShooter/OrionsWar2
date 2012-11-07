@@ -14,19 +14,17 @@ import java.util.Random;
 
 
 @SuppressWarnings("serial")
-public class NewGameMenu extends JPanel 
+public class HowToPlayScreen extends JPanel 
 {
 	private static Color backgroundColor = Color.black;
 	private static Color textColor = Color.white;
 	
-	private static String title = "Create New Game";
-	private static String chooseName = "Choose name:";
-	private static String retMain = "Return to main menu";
-	private static String start = "Start";
+	private static String title = "How to play";
+	private static String instructions = "Placeholder";
+	private static String proceed = "Continue";
 
-	private static JTextField nameField = new JTextField();
 	
-	private static Dimension windowSize = new Dimension(1000,800);
+	private static Dimension windowSize = new Dimension(1283,1038);
 	private static Image img1;
 	
 	//TODO: make the selectionOval its own class
@@ -35,7 +33,7 @@ public class NewGameMenu extends JPanel
 	private static int selectionOvalX = 40;
 	private static int selectionOvalY = 124;
 	
-	public NewGameMenu()
+	public HowToPlayScreen()
 	{
 		System.out.println("new game menu created");
         ImageIcon icon = new ImageIcon("images/spacefieldposs.png");
@@ -50,18 +48,12 @@ public class NewGameMenu extends JPanel
 		//this.setVisible(true); // needed to focus
 		//this.setFocusable(true); // needed to focus
 		//this.setEnabled(true); // needed to focus
-		this.addKeyListener(new NewGameMenuKeyAdapter(this));
-		this.addMouseListener(new NewGameMenuMouseAdapter(this));
-		//System.out.println("requesting focus: " + this.requestFocus());
+		this.addKeyListener(new HowToPlayScreenKeyAdapter(this));
+		//this.addMouseListener(new NewGameMenuMouseAdapter(this));
 		//System.out.println("requesting focus: " + this.requestFocus());
 		
 		//added so that manual position of JComponents would be feasible
 		this.setLayout(null);
-
-		
-		this.add(nameField);
-		nameField.setBounds(150, 75, 200, 20);
-		nameField.repaint();
 
 	}
 	
@@ -69,8 +61,8 @@ public class NewGameMenu extends JPanel
     {
 
 		// the following two lines are needed because calling the paint overrides the background color
-	
-		g.drawImage(img1, 0, 0, 1000,800, this);
+		super.paintComponent(g);
+		g.drawImage(img1, 0, 0, 1283,1038, this);
 		
 		g.setColor(textColor);
 		
@@ -78,33 +70,16 @@ public class NewGameMenu extends JPanel
 		
 		g.drawString(title, 50, 50);
 		
-		g.drawString(chooseName, 50, 90);
-		g.drawString(retMain, 50, 130);
-		g.drawString(start, 50, 150);
-		
-		//IMPORTANT: PLACEHOLDERS!!
-		
-		/*
-		g.drawString(levelOne, 50, 100);
-		g.drawString(levelTwo, 50, 120);
-		g.drawString(levelThree, 50,  140);
-		g.drawString(levelFour, 50, 160);
-		g.drawString(exit, 50, 180);
-		*/
-		
-		
-		// IMPORTANT: keep note of these x and y positions, they correspond to the selection areas for getSelection
-		//g.drawString(playGame, 50, 100);
-		//g.drawString(highScores, 50, 120);
-		//g.drawString(options, 50, 140);
-		//g.drawString(exit, 50, 160);
+		g.drawString(proceed, 50, 130);
+		g.drawString(instructions, 50, 150);
+
     }
 	
 	public void moveSelectionOvalUp()
 	{
 		if(selectionOvalY == 124)
 		{
-			selectionOvalY = 144;
+			selectionOvalY = 124;
 			repaint();
 			return;
 		}
@@ -113,7 +88,7 @@ public class NewGameMenu extends JPanel
 	}
 	public void moveSelectionOvalDown()
 	{
-		if(selectionOvalY == 144)
+		if(selectionOvalY == 124)
 		{
 			selectionOvalY = 124;
 			repaint();
@@ -125,15 +100,11 @@ public class NewGameMenu extends JPanel
 	public int getSelection()
 	{
 		if(selectionOvalY == 124) return 1;
-		else if(selectionOvalY == 144) return 2;
+		//else if(selectionOvalY == 144) return 2;
 		//else if(selectionOvalY == 134) return 3;
 		//else if(selectionOvalY == 154) return 4;
 		//else if(selectionOvalY == 174) return 5;
 		return 0;
 	}
 	
-	public String getNewName()
-	{
-		return nameField.getText();
-	}
 }

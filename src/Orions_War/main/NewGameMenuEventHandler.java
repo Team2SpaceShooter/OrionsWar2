@@ -28,7 +28,7 @@ public class NewGameMenuEventHandler
 			Main.mainMenu.setEnabled(true);
 			Main.mainMenu.setFocusable(true);
 			Main.mainMenu.requestFocusInWindow();
-			Main.mainMenu.moveSelectionOvalDown();
+
 		}
 		
 		// TODO: this currently returns to main menu as placeholder
@@ -42,13 +42,13 @@ public class NewGameMenuEventHandler
 			Main.newGameMenu.setFocusable(false);
 			
 			Main.mainFrame.remove(Main.newGameMenu);
-			Main.mainFrame.add(Main.mainMenu);
+			Main.mainFrame.add(Main.HowToPlayScreen);
 			
-			Main.mainMenu.setVisible(true);
-			Main.mainMenu.setEnabled(true);
-			Main.mainMenu.setFocusable(true);
-			Main.mainMenu.requestFocusInWindow();
-			Main.mainMenu.moveSelectionOvalDown();
+			Main.HowToPlayScreen.setVisible(true);
+			Main.HowToPlayScreen.setEnabled(true);
+			Main.HowToPlayScreen.setFocusable(true);
+			Main.HowToPlayScreen.requestFocusInWindow();
+			
 		}
 		
 		else if(eventId == 3)

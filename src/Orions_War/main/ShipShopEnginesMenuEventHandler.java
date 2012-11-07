@@ -8,13 +8,25 @@ public class ShipShopEnginesMenuEventHandler
 
 	public static void handleEvent(int eventId)
 	{
-		// Do nothing because same screen is being selected
+		// Changes focus to Main Ship Shop Menu
 		if(eventId == 1)
 		{
+			System.out.println("Exit Ship Shop Engines menu to Main Ship Shop Menu selected");
+			Main.ShipShopEnginesMenu.setVisible(false);
+			Main.ShipShopEnginesMenu.setEnabled(false);
+			Main.ShipShopEnginesMenu.setFocusable(false);
 			
+			Main.mainFrame.remove(Main.ShipShopEnginesMenu);
+			
+			Main.mainFrame.add(Main.ShipShopMenu);
+		   
+			Main.ShipShopMenu.setVisible(true);
+			Main.ShipShopMenu.setEnabled(true);
+			Main.ShipShopMenu.setFocusable(true);
+			Main.ShipShopMenu.requestFocusInWindow();
 		}
 		
-		// Change the focus to the Engine portion of the Ship Shop
+		// Do nothing because same screen selected
 		else if(eventId == 2)
 		{
 		
@@ -22,14 +34,52 @@ public class ShipShopEnginesMenuEventHandler
 		
 		else if(eventId == 3)
 		{
+			System.out.println("Exit Ship Shop Engines menu to Hulls Ship Shop Menu selected");
+			Main.ShipShopEnginesMenu.setVisible(false);
+			Main.ShipShopEnginesMenu.setEnabled(false);
+			Main.ShipShopEnginesMenu.setFocusable(false);
+			
+			Main.mainFrame.remove(Main.ShipShopEnginesMenu);
+			
+			Main.mainFrame.add(Main.ShipShopHullsMenu);
+		   
+			Main.ShipShopHullsMenu.setVisible(true);
+			Main.ShipShopHullsMenu.setEnabled(true);
+			Main.ShipShopHullsMenu.setFocusable(true);
+			Main.ShipShopHullsMenu.requestFocusInWindow();
 		}
 		
 		else if(eventId == 4)
 		{
+			System.out.println("Exit Ship Shop Engines menu to Thrusters Ship Shop Menu selected");
+			Main.ShipShopEnginesMenu.setVisible(false);
+			Main.ShipShopEnginesMenu.setEnabled(false);
+			Main.ShipShopEnginesMenu.setFocusable(false);
+			
+			Main.mainFrame.remove(Main.ShipShopEnginesMenu);
+			
+			Main.mainFrame.add(Main.ShipShopThrustersMenu);
+		   
+			Main.ShipShopThrustersMenu.setVisible(true);
+			Main.ShipShopThrustersMenu.setEnabled(true);
+			Main.ShipShopThrustersMenu.setFocusable(true);
+			Main.ShipShopThrustersMenu.requestFocusInWindow();
 		}
 		else if(eventId == 5)
 		{
-
+			System.out.println("Exit Ship Shop Engines menu to Weapons Ship Shop Menu selected");
+			Main.ShipShopEnginesMenu.setVisible(false);
+			Main.ShipShopEnginesMenu.setEnabled(false);
+			Main.ShipShopEnginesMenu.setFocusable(false);
+			
+			Main.mainFrame.remove(Main.ShipShopEnginesMenu);
+			
+			Main.mainFrame.add(Main.ShipShopWeaponsMenu);
+		   
+			Main.ShipShopWeaponsMenu.setVisible(true);
+			Main.ShipShopWeaponsMenu.setEnabled(true);
+			Main.ShipShopWeaponsMenu.setFocusable(true);
+			Main.ShipShopWeaponsMenu.requestFocusInWindow();
 		}
 		else if(eventId == 6)
 		{
@@ -41,7 +91,7 @@ public class ShipShopEnginesMenuEventHandler
 		}
 		else if(eventId == 8)
 		{
-			System.out.println("Exit Ship Shop menu selected");
+			System.out.println("Exit Ship Shop Engines menu to Main Menu selected");
 			Main.ShipShopEnginesMenu.setVisible(false);
 			Main.ShipShopEnginesMenu.setEnabled(false);
 			Main.ShipShopEnginesMenu.setFocusable(false);
@@ -54,7 +104,7 @@ public class ShipShopEnginesMenuEventHandler
 			Main.mainMenu.setEnabled(true);
 			Main.mainMenu.setFocusable(true);
 			Main.mainMenu.requestFocusInWindow();
-			Main.mainMenu.moveSelectionOvalDown();
+			
 		}
 		
 		
